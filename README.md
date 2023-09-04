@@ -2,7 +2,7 @@
 
 **Author**: Noel Prado, Daniel Mundo, Angel Orellana, and Julio Lopez.  
 **Language**: Verilog  
-**Description**: A finite state machine that is able to print two different texts. It utilizes 8 output pins, with each character printed as the ASCII character described in 8 bits.
+**Description**: A circuit that is able to print two different texts. It utilizes 8 output pins, with each character printed as the ASCII character described in 8 bits.
 
 ## How it Works
 
@@ -22,12 +22,6 @@ To test this project, one needs to use an external microcontroller, where one ca
 
 - Select bit 0: Used to define which text will be displayed.
 - Select bit 1: Used to define which text will be displayed.
-- None
-- None
-- None
-- None
-- None
-- None
 
 ## Outputs
 
