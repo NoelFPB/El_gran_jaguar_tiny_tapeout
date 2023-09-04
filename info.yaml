@@ -41,8 +41,8 @@ documentation:
     To test this project, one needs to use an external microcontroller, where one can read digital input pins synchronously. After reading the characters via the input pins, you can send the pins to a computer via UART communication and display the texts on the computer terminal.
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - select bit 0, used to define which text will be displayed.
-    - select bit 1, used to define which text will be displayed.
+    - select bit 0
+    - select bit 1
     - none
     - none
     - none
@@ -51,7 +51,14 @@ documentation:
     - none
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    All output pins are used to put out the ASCII characters, as this consists of 8 bits, each pin corresponds to one bit.
+    - Bit 0
+    - Bit 1
+    - Bit 2
+    - Bit 3
+    - Bit 4
+    - Bit 5    
+    - Bit 6
+    - Bit 7
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
     - none
