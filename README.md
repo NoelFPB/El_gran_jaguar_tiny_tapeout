@@ -1,48 +1,34 @@
-# Multi stage path for delay measurements
+# ASCII Text Printer Circuit
 
-## Project Details
+**Author**: Noel Prado, Daniel Mundo, Angel Orellana, and Julio Lopez.  
+**Language**: Verilog  
+**Description**: A finite state machine that is able to print two different texts. It utilizes 8 output pins, with each character printed as the ASCII character described in 8 bits.
 
-- **Language**: Verilog
-- **Description**: 
-    Verilog coding for cascaded not gates connected as a ring oscillator. After running the flow it is observed that the synthesizer does not support combinatorial feedback and that it collapsed several cascaded not gates into buffers. The original purpose for the ring oscillator will not be achieved but it is observed that synthesized circuit is still useful for measuring some gate delays that can be compared to theoretical calculations for educational purposes.
+## How it Works
 
-## How It Works
+This circuit is designed to output ASCII-encoded text sequences. The circuit can display two different texts.
 
-The `ui_in` signals first two bits are used to control the transmission of the input signal through the gates all the way to the several external outputs that are taps to different gate stages as to measure different stage delays for educational purposes.
+**Select Input**: The select pins (`ui_in[1:0]`), a 2-bit binary input, determine which text sequence will be displayed:
+- `2'b00` or `2'b11`: Outputs a sequence of characters that correspond to the beginning of a traditional song from Guatemala.
+- `2'b01` or `2'b10`: Outputs a sequence of characters with the names of the people that participated in this project.
+
+The text is displayed character-by-character, with each character's ASCII representation determined by the current value of an internal counter. The counter increments with each clock cycle until the specified limit for the chosen text sequence is reached, at which point it resets, allowing the sequence to be displayed repetitively.
 
 ## How to Test
 
-One can put a square wave generator in the inputs and use a scope to measure the delay of the gates. The delay can be compared with theoretical calculations.
+To test this project, one needs to use an external microcontroller, where one can read digital input pins synchronously. After reading the characters via the input pins, you can send the pins to a computer via UART communication and display the texts on the computer terminal.
 
 ## Inputs
 
-- EN (ui_in[0])
-- EN_2 (ui_in[1])
-- none
-- none
-- none
-- none
-- none
-- none
+- Select bit 0: Used to define which text will be displayed.
+- Select bit 1: Used to define which text will be displayed.
+- None
+- None
+- None
+- None
+- None
+- None
 
 ## Outputs
 
-- Tap 1 (uo_out[0])
-- Tap 2 (uo_out[1])
-- Tap 3 (uo_out[2])
-- none
-- none
-- none
-- none
-- none
-
-## Bidirectional
-
-- none
-- none
-- none
-- none
-- none
-- none
-- none
-- none
+All output pins are used to output the ASCII characters. As this consists of 8 bits, each pin corresponds to one bit.
