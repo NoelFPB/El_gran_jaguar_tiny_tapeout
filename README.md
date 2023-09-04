@@ -18,31 +18,15 @@ One can put a square wave generator in the inputs and use a scope to measure the
 
 - EN (ui_in[0])
 - EN_2 (ui_in[1])
-- none
-- none
-- none
-- none
-- none
-- none
+
 
 ## Outputs
 
 - Tap 1 (uo_out[0])
 - Tap 2 (uo_out[1])
 - Tap 3 (uo_out[2])
-- none
-- none
-- none
-- none
-- none
 
 ## Bidirectional
 
 - none
-- none
-- none
-- none
-- none
-- none
-- none
-- none
+
