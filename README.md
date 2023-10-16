@@ -1,3 +1,4 @@
+![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg)
 # ASCII Text Printer Circuit
 
 **Author**: Noel Prado, Daniel Mundo, Angel Orellana, and Julio Lopez.  
