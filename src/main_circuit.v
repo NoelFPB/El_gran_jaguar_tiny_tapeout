@@ -22,7 +22,7 @@ assign uio_oe = 8'h0;
 
 // Inputs
 assign n_reset = uio_in[0];
-assign in = uio_in[4:1];
+assign entrada = uio_in[4:1];
 assign instr = ui_in;
 
 // Outputs
@@ -35,7 +35,7 @@ assign uo_out[7:4] = out;
 //   input n_reset,
 //   output [3:0] address,
 //   input [7:0] instr,
-//   input [3:0] in,
+//   input [3:0] entrada,
 //   output [3:0] out);
 
   //------------------------
@@ -66,7 +66,7 @@ assign uo_out[7:4] = out;
   //------------------------
 
   // データセレクタ
-  data_selector ds (a_reg, b_reg, in, 4'b0000, select_a, select_b, selector_out);
+  data_selector ds (a_reg, b_reg, entrada, 4'b0000, select_a, select_b, selector_out);
 
   //------------------------
   // レジスタ
