@@ -16,7 +16,7 @@ module tt_um_chip_SP_Soy_de_Zacapa(
 wire n_reset;
 wire [3:0] out;
 wire [3:0] address;
-
+wire [3:0]entrada;
 // To use the bidirectional pins as input
 assign uio_oe = 8'h0;
 
