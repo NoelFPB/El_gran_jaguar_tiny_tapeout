@@ -171,48 +171,48 @@ endmodule
 // （ラーメンタイマーを実行して、out を $display するだけ）
 // iverilog -o a cpu.v && ./a
 //------------------------
-module cpu_test();
-  reg clk;
-  reg n_reset;
-  reg [3:0] port_in;
+// module cpu_test();
+//   reg clk;
+//   reg n_reset;
+//   reg [3:0] port_in;
 
-  wire [3:0] address;
-  wire [7:0] dout;
-  wire [3:0] port_out;
+//   wire [3:0] address;
+//   wire [7:0] dout;
+//   wire [3:0] port_out;
 
-  // Generate clock
-  always begin
-    #5 clk = 1;
-    #5 clk = 0;
-  end
+//   // Generate clock
+//   always begin
+//     #5 clk = 1;
+//     #5 clk = 0;
+//   end
 
-  cpu cpu(clk, n_reset, address, dout, port_in, port_out);
-  test_rom rom(address, dout);
+//   cpu cpu(clk, n_reset, address, dout, port_in, port_out);
+//   test_rom rom(address, dout);
 
-  // Finish after 3000 unit times
-  always
-    //#3000 $finish;
+//   // Finish after 3000 unit times
+//   always
+//     #3000 $finish;
 
-  initial begin
-    // 波形データを cpu_test.vcd へ出力する
-    $dumpfile("cpu_test.vcd");
+//   initial begin
+//     // 波形データを cpu_test.vcd へ出力する
+//     $dumpfile("cpu_test.vcd");
 
-    // cpu モジュール内の変数を波形データとして出力
-    $dumpvars(0, cpu);
+//     // cpu モジュール内の変数を波形データとして出力
+//     $dumpvars(0, cpu);
 
-    // 出力ポートをモニタする
-    $monitor("%t: out = %b", $time, port_out);
-  end
+//     // 出力ポートをモニタする
+//     $monitor("%t: out = %b", $time, port_out);
+//   end
 
-  initial begin
-    // Init variables
-    #0 clk = 0; n_reset = 1; port_in = 4'b0101;
+//   initial begin
+//     // Init variables
+//     #0 clk = 0; n_reset = 1; port_in = 4'b0101;
 
-    // Reset cpu
-    #10 n_reset = 0;
-    #10 n_reset = 1;
-  end
-endmodule
+//     // Reset cpu
+//     #10 n_reset = 0;
+//     #10 n_reset = 1;
+//   end
+// endmodule
 
 //------------------------
 // ROM
