@@ -20,7 +20,7 @@ wire [3:0]entrada;
 wire [7:0]instr;
 // To use the bidirectional pins as input
 assign uio_oe = 8'h0;
-
+assign uio_out = 8'h0;
 // Inputs
 assign n_reset = uio_in[0];
 assign entrada = uio_in[4:1];
@@ -29,6 +29,7 @@ assign instr = ui_in;
 // Outputs
 assign uo_out[3:0] = address;
 assign uo_out[7:4] = out;
+
 
 //--------------------------------
 // module cpu(
