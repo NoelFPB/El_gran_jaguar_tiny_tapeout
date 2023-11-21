@@ -191,7 +191,7 @@ module cpu_test();
 
   // Finish after 3000 unit times
   always
-    #3000 $finish;
+    //#3000 $finish;
 
   initial begin
     // 波形データを cpu_test.vcd へ出力する
